@@ -1,0 +1,22 @@
+package:
+  name: wallflower
+  version: 0.1
+
+source:
+  path: .
+
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy
+    - scipy
+
+  run:
+    - python
+
+about:
+  home: https://github.com/khirotaka/wallflower
+  license: MIT
+  description : |
