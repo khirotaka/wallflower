@@ -1,6 +1,5 @@
 # wallflower
 
-## Installation 🖥 ← 📦
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8d1a42e7b40947b18793150b16825e14)](https://www.codacy.com/manual/KawashimaHirotaka/wallflower?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=khirotaka/wallflower&amp;utm_campaign=Badge_Grade)
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/version.svg)](https://anaconda.org/khirotaka/wallflower)
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/latest_release_date.svg)](https://anaconda.org/khirotaka/wallflower)
@@ -9,6 +8,10 @@
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/license.svg)](https://anaconda.org/khirotaka/wallflower)
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/downloads.svg)](https://anaconda.org/khirotaka/wallflower)
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/installer/conda.svg)](https://conda.anaconda.org/khirotaka)
+
+## Installation 🖥 ← 📦
+Conda package is now available!
+you just execute this command if you want to install packages.
 
 ```shell script
 conda install -c khirotaka wallflower
