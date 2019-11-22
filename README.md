@@ -9,20 +9,19 @@
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/downloads.svg)](https://anaconda.org/khirotaka/wallflower)
 [![Anaconda-Server Badge](https://anaconda.org/khirotaka/wallflower/badges/installer/conda.svg)](https://conda.anaconda.org/khirotaka)
 
-
 ```shell script
 conda install -c khirotaka wallflower
 ```
 
 ## Requirements 📝
-* Python 3.6 or later
-* NumPy
-* SciPy
+  * Python 3.6 or later
+  * NumPy
+  * SciPy
 
 ## 🛠 Build Package 📦
-1. clone this repository
-1. move `wallflower/` directory
-1. `conda-build wallflower`
+ 1. clone this repository
+ 2. move `wallflower/` directory
+ 3. `conda-build wallflower`
 
 ```shell script
 git clone https://github.com/khirotaka/wallflower.git
