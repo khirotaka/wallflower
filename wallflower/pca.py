@@ -15,6 +15,7 @@ class PCA:
         y = inputs - xbar
         s = np.dot(y.T, y)
         u, sigma, vt = svds(s, k=self.n_components, tol=self.tol, v0=v0)
+        del sigma
 
         self.VT_ = vt[::-1, :]
 
