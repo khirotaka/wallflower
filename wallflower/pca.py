@@ -14,7 +14,7 @@ class PCA:
         xbar = inputs.mean(axis=0)
         y = inputs - xbar
         s = np.dot(y.T, y)
-        u, _, vt = svds(s, k=self.n_components, tol=self.tol, v0=v0)
+        _, _, vt = svds(s, k=self.n_components, tol=self.tol, v0=v0)
 
         self.VT_ = vt[::-1, :]
 
