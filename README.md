@@ -24,8 +24,8 @@ This packages depends on those packages and systems.
 If you want to build this package on your machine, you just follow this order.
 
 1.  clone this repository
-1.  move `wallflower/` directory
-1.  `conda-build wallflower`
+2.  move `wallflower/` directory
+3.  `conda-build wallflower`
 
 ```shell script
 git clone https://github.com/khirotaka/wallflower.git
@@ -50,6 +50,4 @@ Convert your package for all platforms📦
 ```shell script
 conda-convert --platform all ~/anaconda3/envs/ENVIRONMENT_NAME/conda-bld/PLATFORM/wallflower-VERSION-py36_0.tar.bz2 -o packages/
 ```
-
 ## Usage
-
