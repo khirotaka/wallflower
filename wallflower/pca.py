@@ -1,12 +1,10 @@
 import numpy as np
 from scipy.sparse.linalg import svds
 
-from .core import BaseModel
 
-
-class PCA(BaseModel):
+class PCA:
     def __init__(self, n_components, tol: float = 0.0, random_seed: int = 0):
-        super(PCA, self).__init__(random_seed)
+        self.__random_seed = np.random.RandomState(random_seed)
         self.n_components = n_components
         self.tol = tol
         self.VT_ = None
@@ -22,3 +20,7 @@ class PCA(BaseModel):
 
     def transform(self, inputs: np.ndarray):
         return self.VT_.dot(inputs.T).T
+
+    @property
+    def random_seed(self):
+        return self.__random_seed
