@@ -14,16 +14,16 @@ conda install -c khirotaka wallflower
 ```
 
 ## Requirements 📝
-    * Python 3.6 or later
-    * NumPy
-    * SciPy
+*   Python 3.6 or later
+*   NumPy
+*   SciPy
 
 ## 🛠 Build Package 📦
-if you want to build this package on your machine, you just follow this order.
+If you want to build this package on your machine, you just follow this order.
 
-1. clone this repository
-1. move `wallflower/` directory
-1. `conda-build wallflower`
+1.  clone this repository
+1.  move `wallflower/` directory
+1.  `conda-build wallflower`
 
 ```shell script
 git clone https://github.com/khirotaka/wallflower.git
