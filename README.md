@@ -19,9 +19,11 @@ conda install -c khirotaka wallflower
     * SciPy
 
 ## 🛠 Build Package 📦
-    1. clone this repository
-    2. move `wallflower/` directory
-    3. `conda-build wallflower`
+if you want to build this package on your machine, you just follow this order.
+
+1. clone this repository
+1. move `wallflower/` directory
+1. `conda-build wallflower`
 
 ```shell script
 git clone https://github.com/khirotaka/wallflower.git
@@ -29,10 +31,11 @@ cd wallflower/
 conda-build wallflower
 ```
 
-typically, built package is saved on
+Typically, built package is saved on
 `~/anaconda3/envs/ENVIRONMENT_NAME/conda-bld/PLATFORM/wallflower-VERSION-py36_0.tar.bz2`
 
 if you want to upload your built packages to anaconda cloud, execute this command.
+
 ```shell script
 anaconda upload ~/anaconda3/envs/ENVIRONMENT_NAME/conda-bld/PLATFORM/wallflower-VERSION-py36_0.tar.bz2
 ```
@@ -47,3 +50,4 @@ conda-convert --platform all ~/anaconda3/envs/ENVIRONMENT_NAME/conda-bld/PLATFOR
 ```
 
 ## Usage
+
