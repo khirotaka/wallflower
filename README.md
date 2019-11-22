@@ -14,9 +14,9 @@ conda install -c khirotaka wallflower
 ```
 
 ## Requirements 📝
-*   Python 3.6 or later
-*   NumPy
-*   SciPy
+*    Python 3.6 or later
+*    NumPy
+*    SciPy
 
 ## 🛠 Build Package 📦
 If you want to build this package on your machine, you just follow this order.
