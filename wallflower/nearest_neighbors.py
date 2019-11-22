@@ -1,10 +1,8 @@
 import numpy as np
 
-from .core import BaseModel
 
-
-class NearestNeighbors(BaseModel):
-    def __init__(self, window_size: int, step_size: int, random_seed: int = None):
+class NearestNeighbors:
+    def __init__(self, window_size: int, step_size: int):
         """
         Custom Nearest Neighbors,
 
@@ -20,7 +18,6 @@ class NearestNeighbors(BaseModel):
             step_size:
             random_seed:
         """
-        super(NearestNeighbors, self).__init__(random_seed=random_seed)
         self.__data = None
         self.__ws = window_size
         self.__ss = step_size
