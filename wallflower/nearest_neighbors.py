@@ -57,9 +57,18 @@ class NearestNeighbors:
         Returns:
 
         """
+        if idx < 0:
+            raise IndexError
+
         end = idx + self.window_size - 1
         rng_start = (idx - self.window_size) + 1
         rng_end = (end + self.window_size) - 1
+
+        if rng_start < 0:
+            rng_start = 0
+        if rng_end > self.data.shape[0]:
+            rng_end = self.data.shape[0]
+
         tmp = np.delete(self.data, slice(rng_start, rng_end), 0)
         distance = np.array([self.__distance(p, inputs) for p in tmp])
         return distance.argsort()
