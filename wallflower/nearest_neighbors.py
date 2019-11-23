@@ -16,7 +16,6 @@ class NearestNeighbors:
         Args:
             window_size:
             step_size:
-            random_seed:
         """
         self.__data = None
         self.__ws = window_size
