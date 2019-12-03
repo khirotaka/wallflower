@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.spatial.distance import mahalanobis, cityblock
 
 
 class NearestNeighbors:
@@ -39,12 +40,13 @@ class NearestNeighbors:
         self.__data = inputs
         return self
 
-    def predict(self, inputs: np.ndarray, idx: int) -> np.ndarray:
+    def predict(self, inputs: np.ndarray, idx: int, criterion: str = "euclidean") -> np.ndarray:
         """
 
         Args:
             inputs:
             idx:
+            criterion:
 
         Examples::
             >>> x_train = np.random.randn(512, 320)     # [ samples, features ]
@@ -56,6 +58,24 @@ class NearestNeighbors:
         Returns:
 
         """
+        tmp = self.separate(idx)
+
+        if criterion == "manhattan":
+            distance = np.array([self.manhattan_distance(p, inputs) for p in tmp])
+            return distance
+
+        elif criterion == "euclidean":
+            distance = np.array([self.euclidean_distance(p, inputs) for p in tmp])
+            return distance.argsort()
+
+        elif criterion == "mahalanobis":
+            distance = np.array([self.mahalanobis_distance(tmp, i) for i in inputs])
+            return distance
+
+        else:
+            raise Exception("Argument not defined.")
+
+    def separate(self, idx):
         if idx < 0:
             raise IndexError
 
@@ -69,12 +89,22 @@ class NearestNeighbors:
             rng_end = self.data.shape[0]
 
         tmp = np.delete(self.data, slice(rng_start, rng_end), 0)
-        distance = np.array([self.__distance(p, inputs) for p in tmp])
-        return distance.argsort()
+        return tmp
 
     @staticmethod
-    def __distance(p0: np.ndarray, p1: np.ndarray) -> np.ndarray:
+    def manhattan_distance(p0: np.ndarray, p1: np.ndarray) -> np.ndarray:
+        return cityblock(p0, p1)
+
+    @staticmethod
+    def euclidean_distance(p0: np.ndarray, p1: np.ndarray) -> np.ndarray:
         return np.linalg.norm(p0 - p1)
+
+    @staticmethod
+    def mahalanobis_distance(data: np.ndarray, inputs: np.ndarray) -> np.ndarray:
+        mean = np.mean(data, axis=0)
+        cov = np.cov(data.T)
+        distance = mahalanobis(inputs, mean, np.linalg.pinv(cov))
+        return distance
 
     @property
     def data(self):
